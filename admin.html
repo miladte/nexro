@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0B0B">
+  <meta name="description" content="پنل نمایشی مدیریت نکسرو؛ محیط آزمایشی فرانت‌اند و بدون اتصال به سرور.">
+  <title>مدیریت NEXRO | محیط نمایشی</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/admin.js" defer></script>
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <div class="sidebar-scrim" data-close-sidebar></div>
+    <aside class="sidebar" id="admin-sidebar" aria-label="منوی مدیریت">
+      <a class="admin-brand" href="index.html" aria-label="بازگشت به وب‌سایت نکسرو">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M14 7h20l2 5v28H12V12l2-5Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M17 7V4h14v3M12 15h24M15 36h18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M17 25c2-4 5-6 10-6 3 0 5 1 7 3l4 1-3 3h-3l-2 4h-3l-1-3h-5l-2 3h-3l1-4-3-1 3-2Z" fill="currentColor"/>
+          <path d="m34 21 5-2-2 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-copy"><strong>NEXRO</strong><small>SUPPLEMENTS &amp; TRAINING</small></span>
+      </a>
+
+      <div class="sidebar-label">مدیریت فروشگاه</div>
+      <nav class="sidebar-nav" aria-label="بخش‌های پنل">
+        <button class="nav-item active" type="button" data-view="dashboard"><span class="nav-icon">◫</span><span>داشبورد</span></button>
+        <button class="nav-item" type="button" data-view="products"><span class="nav-icon">▣</span><span>محصولات</span></button>
+        <button class="nav-item" type="button" data-view="inventory"><span class="nav-icon">▤</span><span>مدیریت موجودی</span><span class="nav-count" id="low-stock-count">۰</span></button>
+        <button class="nav-item" type="button" data-view="orders"><span class="nav-icon">▧</span><span>سفارش‌ها</span></button>
+        <button class="nav-item" type="button" data-view="customers"><span class="nav-icon">♙</span><span>مشتریان</span></button>
+        <button class="nav-item" type="button" data-view="workouts"><span class="nav-icon">⌁</span><span>برنامه‌های تمرین</span></button>
+        <button class="nav-item" type="button" data-view="nutrition"><span class="nav-icon">◉</span><span>برنامه‌های تغذیه</span></button>
+        <button class="nav-item" type="button" data-view="content"><span class="nav-icon">▧</span><span>محتوای وب‌سایت</span></button>
+        <button class="nav-item" type="button" data-view="coupons"><span class="nav-icon">٪</span><span>تخفیف و کدها</span></button>
+        <button class="nav-item" type="button" data-view="messages"><span class="nav-icon">✉</span><span>پیام‌های مشتریان</span><span class="nav-count" id="unread-count">۰</span></button>
+        <button class="nav-item" type="button" data-view="reviews"><span class="nav-icon">☆</span><span>دیدگاه‌ها</span></button>
+        <button class="nav-item" type="button" data-view="reports"><span class="nav-icon">▥</span><span>گزارش‌ها و تحلیل</span></button>
+        <button class="nav-item" type="button" data-view="settings"><span class="nav-icon">⚙</span><span>تنظیمات</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-demo"><span class="status-dot"></span><span><strong>محیط نمایشی</strong><small>اتصال به سرور برقرار نیست</small></span></div>
+        <a class="return-link" href="index.html"><span aria-hidden="true">↩</span> بازگشت به وب‌سایت</a>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <button class="icon-button mobile-menu-button" type="button" aria-label="باز کردن منو" aria-expanded="false" data-open-sidebar><span>☰</span></button>
+        <div class="breadcrumb"><span>پنل مدیریت</span><span class="breadcrumb-separator">/</span><strong id="current-section">داشبورد</strong></div>
+        <div class="topbar-actions">
+          <label class="global-search"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="جست‌وجو در این بخش..." aria-label="جست‌وجو در بخش جاری"><kbd>⌘ K</kbd></label>
+          <div class="popover-wrap">
+            <button class="icon-button notification-button" type="button" aria-label="اعلان‌ها" aria-expanded="false" data-popover="notifications"><span>♧</span><i></i></button>
+            <div class="popover notification-popover" data-panel="notifications" hidden>
+              <div class="popover-heading"><strong>اعلان‌های نمایشی</strong><span>نمونه</span></div>
+              <p><b>موجودی کم</b><small>کراتین مونوهیدرات به حد هشدار رسیده است.</small></p>
+              <p><b>سفارش جدید</b><small>سفارش NX-2408 برای بررسی آماده است.</small></p>
+              <button class="text-button" type="button" data-go="orders">مشاهده سفارش‌ها</button>
+            </div>
+          </div>
+          <div class="popover-wrap">
+            <button class="profile-button" type="button" aria-expanded="false" data-popover="profile"><span class="avatar">م</span><span class="profile-copy"><strong>مدیر نکسرو</strong><small>مدیر فروشگاه · آزمایشی</small></span><span class="chevron">⌄</span></button>
+            <div class="popover profile-popover" data-panel="profile" hidden>
+              <strong>حساب مدیر نمایشی</strong>
+              <small>این پروفایل احراز هویت واقعی ندارد.</small>
+              <button class="text-button" type="button" data-go="settings">تنظیمات پروفایل</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="demo-banner" role="note">
+          <span class="demo-banner-icon" aria-hidden="true">i</span>
+          <p><strong>نسخه نمایشی — بدون اتصال به سرور</strong><span>اطلاعات این پنل ساختگی و تغییرات فقط در مرورگر ذخیره می‌شوند. پیش از انتشار، احراز هویت و مجوزهای سمت سرور الزامی است.</span></p>
+          <button type="button" class="banner-close" aria-label="بستن اعلان" data-dismiss-banner>×</button>
+        </div>
+        <section id="view-root" aria-live="polite"></section>
+      </main>
+      <footer class="admin-footer"><span>NEXRO · پنل مدیریت نمایشی</span><span>هیچ داده‌ای به سرور ارسال نمی‌شود</span></footer>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
